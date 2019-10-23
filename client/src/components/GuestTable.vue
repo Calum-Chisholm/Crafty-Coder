@@ -9,7 +9,7 @@
     <tr v-for="booking in bookings">
       <td>{{booking.name}}</td>
       <td>{{booking.email}}</td>
-      <td><input  type="checkbox" name="checked_in" v-if="booking.checked_in" checked></td>
+      <td><i class="far fa-check-circle" v-if="booking.checked_in"></i><i class="far fa-times-circle" v-if="!booking.checked_in"></i></td>
       <td><input  v-on:click="deleteBooking(booking._id)" type="submit" value="Delete"></td>
   </tr>
 </table>
