@@ -27,4 +27,4 @@ db.guests.insertMany([
     email: "ks@me.com",
     checked_in: true,
   },
-])
+]);
