@@ -4,14 +4,14 @@
       <th>Name:</th>
       <th>Email:</th>
       <th>Checked in</th>
-      <th></th>
+
     </tr>
     <tr v-for="booking in bookings">
       <td>{{booking.name}}</td>
       <td>{{booking.email}}</td>
       <td><i class="far fa-check-circle" v-if="booking.checked_in"></i><i class="far fa-times-circle" v-if="!booking.checked_in"></i></td>
-      <td><input  v-on:click="deleteBooking(booking._id)" type="submit" value="Delete"></td>
-      <td><input  v-on:click="checkIn(booking._id)" type="submit" value="Check In"></td>
+      <td><input class="btn" v-on:click="deleteBooking(booking._id)" type="submit" value="Delete"></td>
+      <td><input class="btn" v-on:click="checkIn(booking._id)" type="submit" value="Check In"></td>
     </tr>
   </table>
 </template>
@@ -36,10 +36,10 @@ export default {
 
     checkIn(id){
       HotelService.updateBooking(id, { checked_in: true });
-      this.bookings.find((booking) => {
-        booking._id === id
-        booking.checked_in = true
+       const guest = this.bookings.find((booking) => {
+        return booking._id === id
       })
+      guest.checked_in = true
     }
   },
   mounted(){
@@ -53,5 +53,33 @@ export default {
 }
 </script>
 
+
 <style lang="css" scoped>
+table,th,td{
+  padding:3px;
+  border: 1px solid black;
+  font-size:1.2em;
+
+}
+
+table {
+  padding:10%;
+  border-collapse: collapse;
+  background-color: #E0FBFC;
+  
+  border: 1px solid black;
+}
+
+.btn{
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.fa-check-circle{
+  color: lightGreen;
+}
+
+.fa-times-circle{
+  color: red;
+}
 </style>
