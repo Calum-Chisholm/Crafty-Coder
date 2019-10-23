@@ -1,9 +1,12 @@
 <template lang="html">
+<div>
   <table>
     <tr>
       <th>Name:</th>
       <th>Email:</th>
       <th>Checked in</th>
+      <th><i class="fas fa-trash-alt"></i></th>
+      <th><i class="fas fa-concierge-bell"></i></th>
 
     </tr>
     <tr v-for="booking in bookings">
@@ -14,6 +17,7 @@
       <td><input class="btn" v-on:click="checkIn(booking._id)" type="submit" value="Check In"></td>
     </tr>
   </table>
+</div>
 </template>
 
 <script>
@@ -55,16 +59,23 @@ export default {
 
 
 <style lang="css" scoped>
+div {
+ /* border: 1px solid black; */
+}
+
 table,th,td{
   padding:3px;
   border: 1px solid black;
   font-size:1.2em;
 }
 
+th, td {
+  background-color: #E0FBFC;
+}
+
 table {
   padding:10%;
   border-collapse: collapse;
-  background-color: #E0FBFC;
   border: 1px solid black;
 }
 
