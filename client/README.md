@@ -1,4 +1,4 @@
-# crafty_coder
+# client
 
 ## Project setup
 ```
