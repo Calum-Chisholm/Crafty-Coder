@@ -50,8 +50,17 @@ form{
   box-shadow:10px 10px 10px grey;
 }
 #saveBtn{
-  padding:10%;
+  text-decoration: none;
+  background: white;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
 }
+#saveBtn:hover{
+ box-shadow: 0 5px 15px rgba(255, 51, 153, .8);
+}
+
+
+
 .tableItems{
   padding:20px;
 }

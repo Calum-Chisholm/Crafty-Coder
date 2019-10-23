@@ -59,20 +59,26 @@ table,th,td{
   padding:3px;
   border: 1px solid black;
   font-size:1.2em;
-
 }
 
 table {
   padding:10%;
   border-collapse: collapse;
   background-color: #E0FBFC;
-  
   border: 1px solid black;
 }
 
 .btn{
-  font-size: 1.2em;
+  font-size: 0.8em;
   vertical-align: middle;
+  text-decoration: none;
+  background: white;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover{
+ box-shadow: 0 5px 15px rgba(255, 51, 153, .8);
 }
 
 .fa-check-circle{
